@@ -1,0 +1,39 @@
+@import '~antd/dist/antd.css';
+
+#canvas-container {
+  height: 100vh;
+}
+
+#menu {
+  position: absolute;
+  background-color: rgba($color: lightblue, $alpha:0.8);
+  padding: 1rem;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+}
+
+#menu-close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  text-align: center;
+  line-height: 1.2rem;
+  border: 1px solid transparent;
+  &:hover {
+    background-color: lightgray;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+}
+
+.menu-wrapper {
+  position: relative;
+  & > p {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
