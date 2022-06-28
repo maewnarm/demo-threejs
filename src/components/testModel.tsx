@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { useGLTF, useAnimations, CycleRaycast } from "@react-three/drei";
 import { message } from "antd";
 import { useState } from "react";
+import { debounce } from "debounce";
 
 export default function Model(props: any) {
   const group = useRef();
@@ -12,12 +13,15 @@ export default function Model(props: any) {
   // console.log(animations);
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group
+      ref={group}
+      {...props}
+      dispose={null}
+      onPointerEnter={() => console.log("enter unitNo", unitNo)}
+    >
       <group name="Scene">
         <group name={`Jig-${unitNo}`} position={[0, 1.68, 0.98]} scale={0.33}>
-          <group name="Bone" />
           <mesh
-            name="Cube001"
             castShadow
             receiveShadow
             geometry={nodes.Cube001.geometry}
